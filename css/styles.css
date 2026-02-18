@@ -1,0 +1,101 @@
+/* Fondo general moderno */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180deg, #FFF5F5 0%, #FFFFFF 100%);
+  color: #333;
+}
+
+/* CABECERA */
+.header {
+  background: #CC0000;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header .logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.header .menu a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header .menu a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #FFECEC;
+  border-bottom: 1px solid #FFD6D6;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #CC0000;
+}
+
+/* CONTENEDOR GENERAL */
+.contenedor {
+  padding: 2rem;
+}
+
+.titulo-seccion {
+  font-size: 1.8rem;
+  color: #CC0000;
+  margin-bottom: 1rem;
+}
+
+/* GRID DE NOTICIAS */
+.noticias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* TARJETAS */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #CC0000;
+  margin-top: 0;
+}
+
+.card small {
+  color: #777;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #222;
+  color: white;
+  margin-top: 3rem;
+}
