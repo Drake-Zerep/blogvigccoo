@@ -15,4 +15,5 @@ fetch("data/noticias.json")
 
       contenedor.appendChild(card);
     });
-  });
+  })
+  .catch(err => console.error("Error cargando noticias:", err));
