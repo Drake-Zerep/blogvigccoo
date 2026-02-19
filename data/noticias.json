@@ -2,21 +2,29 @@
   {
     "titulo": "Bienvenida al nuevo portal sindical",
     "fecha": "2026-02-17",
-    "contenido": "Inauguramos este espacio digital para informar a la plantilla de Prosegur Security."
+    "contenido": "Inauguramos este espacio digital para informar a la plantilla de Prosegur Security.",
+    "slug": "bienvenida-portal",
+    "categoria": "noticias"
   },
   {
     "titulo": "Convocatoria de elecciones sindicales",
     "fecha": "2026-02-20",
-    "contenido": "Toda la información sobre el proceso electoral sindical."
+    "contenido": "Toda la información sobre el proceso electoral sindical.",
+    "slug": "convocatoria-elecciones",
+    "categoria": "elecciones"
   },
   {
     "titulo": "Reunión con la empresa",
     "fecha": "2026-02-22",
-    "contenido": "CCOO Hábitat presenta nuevas propuestas para mejorar las condiciones laborales."
+    "contenido": "CCOO Hábitat presenta nuevas propuestas para mejorar las condiciones laborales.",
+    "slug": "reunion-empresa",
+    "categoria": "comunicados"
   },
   {
     "titulo": "Asamblea informativa",
     "fecha": "2026-02-25",
-    "contenido": "Convocamos a toda la plantilla a una asamblea informativa sobre la campaña electoral."
+    "contenido": "Convocamos a toda la plantilla a una asamblea informativa sobre la campaña electoral.",
+    "slug": "asamblea-informativa",
+    "categoria": "noticias"
   }
 ]
