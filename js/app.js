@@ -1,7 +1,7 @@
 // =========================
 // BLOQUE DESTACADA
 // =========================
-fetch("data/noticias.json")
+fetch("/blogvigccoo/data/noticias.json")
   .then(res => res.json())
   .then(noticias => {
     const destacada = noticias.find(n => n.destacada === true);
@@ -27,7 +27,7 @@ fetch("data/noticias.json")
 // =========================
 // ÚLTIMAS 3 NOTICIAS
 // =========================
-fetch("data/noticias.json")
+fetch("/blogvigccoo/data/noticias.json")
   .then(res => res.json())
   .then(noticias => {
     const contenedor = document.getElementById("noticias");
