@@ -17,14 +17,12 @@ fetch("data/noticias.json")
   <div class="noticia-img-wrapper">
     <img src="${noticia.imagen}" class="noticia-img">
   </div>
-
   <h1>${noticia.titulo}</h1>
-  <small>${noticia.fecha} — ${noticia.categoria.toUpperCase()}</small>
-
+  <p>${noticia.fecha} — ${noticia.categoria.toUpperCase()}</p>
   <p>${noticia.contenido}</p>
-
   <a href="index.html" class="volver">← Volver</a>
 `;
+
 
   })
   .catch(err => console.error("Error cargando noticia:", err));
