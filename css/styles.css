@@ -127,3 +127,19 @@ body {
   border-radius: 10px;
   object-fit: cover;
 }
+
+/* Centrar contenido de la noticia */
+#contenido-noticia {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#contenido-noticia h1 {
+  text-align: center;
+}
+
+#contenido-noticia p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
