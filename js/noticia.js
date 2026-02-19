@@ -14,9 +14,11 @@ fetch("data/noticias.json")
     }
 
     contenedor.innerHTML = `
+      <img src="${noticia.imagen}" class="noticia-img">
       <h1>${noticia.titulo}</h1>
       <small>${noticia.fecha} — ${noticia.categoria.toUpperCase()}</small>
       <p>${noticia.contenido}</p>
       <a href="index.html" class="volver">← Volver</a>
     `;
-  });
+  })
+  .catch(err => console.error("Error cargando noticia:", err));
