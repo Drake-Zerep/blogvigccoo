@@ -3,7 +3,13 @@ fetch("data/noticias.json")
   .then(noticias => {
     const contenedor = document.getElementById("noticias");
 
-    noticias.forEach(noticia => {
+    // Ordenar por fecha (más reciente primero)
+    noticias.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+    // Tomar solo las 3 primeras
+    const ultimas = noticias.slice(0, 3);
+
+    ultimas.forEach(noticia => {
       const card = document.createElement("div");
       card.className = "card";
 
