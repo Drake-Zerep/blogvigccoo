@@ -1,3 +1,25 @@
+// Cargar noticia destacada
+fetch("data/noticias.json")
+  .then(res => res.json())
+  .then(noticias => {
+    const destacada = noticias.find(n => n.destacada === true);
+    const contenedor = document.getElementById("destacada");
+
+    if (destacada) {
+      contenedor.innerHTML = `
+        <div class="destacada-contenido">
+          <img src="${destacada.imagen}" class="destacada-img">
+          <div class="destacada-texto">
+            <h2>${destacada.titulo}</h2>
+            <small>${destacada.fecha} — ${destacada.categoria.toUpperCase()}</small>
+            <p>${destacada.contenido}</p>
+            <a href="noticia.html?slug=${destacada.slug}" class="btn-leer">Leer más</a>
+          </div>
+        </div>
+      `;
+    }
+  });
+
 fetch("data/noticias.json")
   .then(res => res.json())
   .then(noticias => {
