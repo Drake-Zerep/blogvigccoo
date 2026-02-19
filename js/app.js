@@ -1,4 +1,6 @@
-// Cargar noticia destacada
+// =========================
+// BLOQUE DESTACADA
+// =========================
 fetch("data/noticias.json")
   .then(res => res.json())
   .then(noticias => {
@@ -18,17 +20,22 @@ fetch("data/noticias.json")
         </div>
       `;
     }
-  });
+  })
+  .catch(err => console.error("Error cargando destacada:", err));
 
+
+// =========================
+// ÚLTIMAS 3 NOTICIAS
+// =========================
 fetch("data/noticias.json")
   .then(res => res.json())
   .then(noticias => {
     const contenedor = document.getElementById("noticias");
 
-    // Ordenar por fecha (más reciente primero)
+    // Ordenar por fecha
     noticias.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
 
-    // Tomar solo las 3 primeras
+    // Tomar solo 3
     const ultimas = noticias.slice(0, 3);
 
     ultimas.forEach(noticia => {
@@ -36,12 +43,11 @@ fetch("data/noticias.json")
       card.className = "card";
 
       card.innerHTML = `
-  <img src="${noticia.imagen}" class="card-img">
-  <h3><a href="noticia.html?slug=${noticia.slug}">${noticia.titulo}</a></h3>
-  <small>${noticia.fecha} — ${noticia.categoria.toUpperCase()}</small>
-  <p>${noticia.contenido}</p>
-`;
-
+        <img src="${noticia.imagen}" class="card-img">
+        <h3><a href="noticia.html?slug=${noticia.slug}">${noticia.titulo}</a></h3>
+        <small>${noticia.fecha} — ${noticia.categoria.toUpperCase()}</small>
+        <p>${noticia.contenido}</p>
+      `;
 
       contenedor.appendChild(card);
     });
