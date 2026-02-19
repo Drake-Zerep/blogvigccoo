@@ -143,3 +143,49 @@ body {
   line-height: 1.6;
   font-size: 1.1rem;
 }
+
+/* BLOQUE DESTACADA */
+.destacada {
+  padding: 2rem;
+  background: #f8f8f8;
+  margin-bottom: 2rem;
+}
+
+.destacada-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.destacada-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.destacada-texto {
+  flex: 1;
+}
+
+.destacada-texto h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #CC0000;
+}
+
+.btn-leer {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background: #CC0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-leer:hover {
+  background: #990000;
+}
