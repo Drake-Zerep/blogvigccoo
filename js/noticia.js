@@ -2,7 +2,7 @@
 const params = new URLSearchParams(window.location.search);
 const slug = params.get("slug");
 
-fetch("data/noticias.json")
+fetch("/blogvigccoo/data/noticias.json")
   .then(res => res.json())
   .then(noticias => {
     const noticia = noticias.find(n => n.slug === slug);
