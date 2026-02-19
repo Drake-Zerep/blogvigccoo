@@ -14,10 +14,10 @@ fetch("data/noticias.json")
       card.className = "card";
 
       card.innerHTML = `
-        <h3>${noticia.titulo}</h3>
-        <small>${noticia.fecha}</small>
-        <p>${noticia.contenido}</p>
-      `;
+  <h3><a href="noticia.html?slug=${noticia.slug}">${noticia.titulo}</a></h3>
+  <small>${noticia.fecha} — ${noticia.categoria.toUpperCase()}</small>
+  <p>${noticia.contenido}</p>
+`;
 
       contenedor.appendChild(card);
     });
