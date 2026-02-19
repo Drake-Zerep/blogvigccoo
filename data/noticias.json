@@ -14,6 +14,7 @@
     "slug": "convocatoria-elecciones",
     "categoria": "elecciones",
     "imagen": "img/elecciones.jpg"
+    "destacada": true
   },
   {
     "titulo": "Reunión con la empresa",
