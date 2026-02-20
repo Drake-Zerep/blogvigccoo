@@ -353,3 +353,21 @@ body {
 .btn-elecciones:hover {
   background: #990000;
 }
+
+/* FILA DOBLE (Comunicados + Elecciones) */
+.fila-doble {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.fila-doble .columna {
+  flex: 1;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .fila-doble {
+    flex-direction: column;
+  }
+}
