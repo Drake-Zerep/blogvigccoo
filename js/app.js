@@ -62,6 +62,41 @@ fetch("/blogvigccoo/data/noticias.json")
   })
   .catch(err => console.error("Error cargando destacada:", err));
 
+// =========================
+// COMUNICADOS RECIENTES (3 últimos)
+// =========================
+fetch("/blogvigccoo/data/noticias.json")
+  .then(res => res.json())
+  .then(noticias => {
+    const contenedor = document.getElementById("comunicados");
+
+    // Filtrar solo comunicados
+    const comunicados = noticias.filter(n => n.categoria === "comunicados");
+
+    // Ordenar por fecha
+    comunicados.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+    // Tomar solo 3
+    const ultimos = comunicados.slice(0, 3);
+
+    ultimos.forEach(com => {
+      const item = document.createElement("div");
+      item.className = "comunicado-item";
+
+      item.innerHTML = `
+        <img src="${com.imagen}" alt="${com.titulo}">
+        <div class="comunicado-texto">
+          <h3><a href="noticia.html?slug=${com.slug}">${com.titulo}</a></h3>
+          <small>${com.fecha} — ${com.categoria.toUpperCase()}</small>
+          <p>${com.contenido}</p>
+        </div>
+      `;
+
+      contenedor.appendChild(item);
+    });
+  })
+  .catch(err => console.error("Error cargando comunicados:", err));
+
 
 // =========================
 // ÚLTIMAS 3 NOTICIAS
