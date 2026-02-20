@@ -445,3 +445,27 @@ body {
     flex-direction: column;
   }
 }
+
+/* BLOQUE DOBLE GENERAL */
+.bloque-doble {
+  margin-top: 2rem;
+}
+
+/* FILAS */
+.bloque-doble .fila {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* COLUMNAS */
+.bloque-doble .col {
+  flex: 1;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+  .bloque-doble .fila {
+    flex-direction: column;
+  }
+}
