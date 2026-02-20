@@ -1,5 +1,5 @@
 // =========================
-// SLIDER DE NOTICIAS (3 primeras)
+// SLIDER DE NOTICIAS (3 primeras) CON MOVIMIENTO AUTOMÁTICO
 // =========================
 fetch("/blogvigccoo/data/noticias.json")
   .then(res => res.json())
@@ -13,7 +13,7 @@ fetch("/blogvigccoo/data/noticias.json")
     const slides = noticias.slice(0, 3);
 
     slider.innerHTML = `
-      <div class="slider-container">
+      <div class="slider-container" id="sliderContainer">
         ${slides.map(noticia => `
           <div class="slide">
             <img src="${noticia.imagen}" alt="${noticia.titulo}">
@@ -23,8 +23,18 @@ fetch("/blogvigccoo/data/noticias.json")
         `).join("")}
       </div>
     `;
+
+    // Movimiento automático
+    const container = document.getElementById("sliderContainer");
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      container.style.transform = `translateX(-${index * 300}px)`;
+    }, 3500); // Cambia cada 3.5 segundos
   })
   .catch(err => console.error("Error cargando slider:", err));
+
 
 
 // =========================
