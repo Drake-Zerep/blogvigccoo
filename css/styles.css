@@ -421,3 +421,27 @@ body {
 .doc-texto a:hover {
   text-decoration: underline;
 }
+
+/* FILA DOBLE PARA DOCUMENTOS */
+.fila-doble-docs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.fila-doble-docs h2 {
+  width: 100%;
+}
+
+.columna-docs {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+  .fila-doble-docs {
+    flex-direction: column;
+  }
+}
