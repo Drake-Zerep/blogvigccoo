@@ -516,3 +516,47 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* CONTACTO RÁPIDO LINEAL */
+.contacto-lineal {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.contacto-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.contacto-icono {
+  font-size: 2rem;
+}
+
+.contacto-item h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.contacto-item a {
+  color: #CC0000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contacto-item a:hover {
+  text-decoration: underline;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .contacto-lineal {
+    flex-direction: column;
+  }
+}
