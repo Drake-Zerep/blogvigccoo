@@ -97,6 +97,36 @@ fetch("/blogvigccoo/data/noticias.json")
   })
   .catch(err => console.error("Error cargando comunicados:", err));
 
+// =========================
+// ELECCIONES SINDICALES 2026
+// =========================
+fetch("/blogvigccoo/data/noticias.json")
+  .then(res => res.json())
+  .then(noticias => {
+    const contenedor = document.getElementById("elecciones");
+
+    // Filtrar solo elecciones
+    const elecciones = noticias.filter(n => n.categoria === "elecciones");
+
+    if (elecciones.length === 0) return;
+
+    // Tomar la más reciente
+    const elec = elecciones.sort((a, b) => new Date(b.fecha) - new Date(a.fecha))[0];
+
+    contenedor.innerHTML = `
+      <div class="eleccion-item">
+        <img src="${elec.imagen}" alt="${elec.titulo}">
+        <div class="eleccion-texto">
+          <h3>${elec.titulo}</h3>
+          <small>${elec.fecha} — ${elec.categoria.toUpperCase()}</small>
+          <p>${elec.contenido}</p>
+          <a href="noticia.html?slug=${elec.slug}" class="btn-elecciones">Ver más</a>
+        </div>
+      </div>
+    `;
+  })
+  .catch(err => console.error("Error cargando elecciones:", err));
+
 
 // =========================
 // ÚLTIMAS 3 NOTICIAS
