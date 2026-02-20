@@ -371,3 +371,8 @@ body {
     flex-direction: column;
   }
 }
+
+.comunicado-item,
+.eleccion-item {
+  margin-bottom: 1rem;
+}
