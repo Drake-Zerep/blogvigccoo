@@ -1,4 +1,33 @@
 // =========================
+// SLIDER DE NOTICIAS (3 primeras)
+// =========================
+fetch("/blogvigccoo/data/noticias.json")
+  .then(res => res.json())
+  .then(noticias => {
+    const slider = document.getElementById("slider");
+
+    // Ordenar por fecha
+    noticias.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+    // Tomar 3 noticias para el slider
+    const slides = noticias.slice(0, 3);
+
+    slider.innerHTML = `
+      <div class="slider-container">
+        ${slides.map(noticia => `
+          <div class="slide">
+            <img src="${noticia.imagen}" alt="${noticia.titulo}">
+            <h3>${noticia.titulo}</h3>
+            <small>${noticia.fecha} — ${noticia.categoria.toUpperCase()}</small>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  })
+  .catch(err => console.error("Error cargando slider:", err));
+
+
+// =========================
 // BLOQUE DESTACADA
 // =========================
 fetch("/blogvigccoo/data/noticias.json")
