@@ -269,3 +269,36 @@ body {
   color: #666;
 }
 
+/* COMUNICADOS RECIENTES - LISTA VERTICAL */
+.comunicados {
+  margin-top: 2rem;
+}
+
+.comunicado-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.comunicado-item img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.comunicado-texto h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.comunicado-texto small {
+  color: #666;
+}
+
+.comunicado-texto p {
+  margin: 0.3rem 0 0;
+  color: #444;
+}
