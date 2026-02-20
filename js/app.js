@@ -36,7 +36,6 @@ fetch("/blogvigccoo/data/noticias.json")
   .catch(err => console.error("Error cargando slider:", err));
 
 
-
 // =========================
 // BLOQUE DESTACADA
 // =========================
@@ -126,6 +125,55 @@ fetch("/blogvigccoo/data/noticias.json")
     `;
   })
   .catch(err => console.error("Error cargando elecciones:", err));
+
+// =========================
+// DOCUMENTOS Y DESCARGAS
+// =========================
+const documentos = [
+  {
+    titulo: "Convenio de Seguridad 2023-2026",
+    archivo: "docs/convenio-23-26.pdf",
+    descripcion: "Convenio colectivo vigente del sector de seguridad privada."
+  },
+  {
+    titulo: "Ley 5/2014 de Seguridad Privada",
+    archivo: "docs/ley-5-2014.pdf",
+    descripcion: "Normativa básica que regula la seguridad privada en España."
+  },
+  {
+    titulo: "Ley Sindical",
+    archivo: "docs/ley-sindical.pdf",
+    descripcion: "Marco legal de la actividad sindical."
+  },
+  {
+    titulo: "Tablas Salariales 2026",
+    archivo: "docs/tablas-salariales-2026.pdf",
+    descripcion: "Retribuciones actualizadas para el año 2026."
+  },
+  {
+    titulo: "Reglamento de Seguridad Privada 2364/1994",
+    archivo: "docs/reglamento-2364-94.pdf",
+    descripcion: "Reglamento que desarrolla la Ley de Seguridad Privada."
+  }
+];
+
+const contDocs = document.getElementById("documentos");
+
+documentos.forEach(doc => {
+  const item = document.createElement("div");
+  item.className = "doc-item";
+
+  item.innerHTML = `
+    <div class="doc-icono">PDF</div>
+    <div class="doc-texto">
+      <h3>${doc.titulo}</h3>
+      <small>${doc.descripcion}</small><br>
+      <a href="${doc.archivo}" target="_blank">Descargar</a>
+    </div>
+  `;
+
+  contDocs.appendChild(item);
+});
 
 
 // =========================
