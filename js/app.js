@@ -127,7 +127,7 @@ fetch("/blogvigccoo/data/noticias.json")
   .catch(err => console.error("Error cargando elecciones:", err));
 
 // =========================
-// DOCUMENTOS Y DESCARGAS
+// DOCUMENTOS Y DESCARGAS (2 columnas)
 // =========================
 const documentos = [
   {
@@ -157,9 +157,10 @@ const documentos = [
   }
 ];
 
-const contDocs = document.getElementById("documentos");
+const col1 = document.getElementById("docs-col-1");
+const col2 = document.getElementById("docs-col-2");
 
-documentos.forEach(doc => {
+documentos.forEach((doc, index) => {
   const item = document.createElement("div");
   item.className = "doc-item";
 
@@ -172,7 +173,12 @@ documentos.forEach(doc => {
     </div>
   `;
 
-  contDocs.appendChild(item);
+  // Alternar entre columnas
+  if (index % 2 === 0) {
+    col1.appendChild(item);
+  } else {
+    col2.appendChild(item);
+  }
 });
 
 
