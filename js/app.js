@@ -211,3 +211,38 @@ fetch("/blogvigccoo/data/noticias.json")
     });
   })
   .catch(err => console.error("Error cargando noticias:", err));
+
+// =========================
+// LISTADO COMPLETO DE NOTICIAS
+// =========================
+if (document.getElementById("lista-noticias")) {
+
+  fetch("/blogvigccoo/data/noticias.json")
+    .then(res => res.json())
+    .then(noticias => {
+
+      const contenedor = document.getElementById("lista-noticias");
+
+      // Ordenar por fecha
+      noticias.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+      noticias.forEach(noticia => {
+        const item = document.createElement("div");
+        item.className = "noticia-lista";
+
+        item.innerHTML = `
+          <img src="${noticia.imagen}" alt="${noticia.titulo}">
+          <div>
+            <h3>${noticia.titulo}</h3>
+            <small>${noticia.fecha} — ${noticia.categoria.toUpperCase()}</small>
+            <p>${noticia.contenido}</p>
+            <a href="noticia.html?slug=${noticia.slug}" class="btn-leer">Leer más</a>
+          </div>
+        `;
+
+        contenedor.appendChild(item);
+      });
+
+    })
+    .catch(err => console.error("Error cargando noticias:", err));
+}
